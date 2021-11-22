@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>click</title>
+</head>
+<body>
+
+<style type="text/css">
+
+
+ .olololo {
+	 position: relative;
+	 overflow: hidden;
+	 display: inline-block;
+}
+ .olololo  a {
+	 cursor: pointer;
+	 padding: 10px 15px;
+	 position: relative;
+	 z-index: 1;
+}
+ .ink {
+	 display: block;
+	 position: absolute;
+	 background: #eee;
+	 border-radius: 100%;
+	 transform: scale(0);
+	 z-index: 0;
+}
+ .ink.animate {
+	 -webkit-animation: ripple 0.65s linear;
+	 animation: ripple 0.65s linear;
+}
+ @keyframes ripple {
+	 100% {
+		 opacity: 0;
+		 transform: scale(2.5);
+	}
+}
+
+</style>
+
+ <div class="olololo">
+ 	<a>
+ 		<span class="ink"></span>Dashboard
+ 	</a>
+ </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	
+$(document).ready(function(){
+  var parent, ink, d, x, y;
+  $('.olololo a').click(function(e){
+    parent = $(this).parent();
+    ink = parent.find('.ink');
+    ink.removeClass('animate');
+    if( !ink.height() && !ink.width() ){
+      d = Math.max(parent.outerWidth(), parent.outerHeight());
+      ink.css({
+        height: d,
+        width: d
+      });
+    }
+    x = e.pageX - parent.offset().left - ink.width()/2;
+    y = e.pageY - parent.offset().top - ink.height()/2;
+    ink.css({
+      top: y + 'px',
+      left: x + 'px'
+    }).addClass('animate');
+  });
+});
+
+
+</script>
+</body>
+</html>
