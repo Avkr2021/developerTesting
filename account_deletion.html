@@ -172,7 +172,7 @@
 
 </style>
 <section>
-<div class="menu" id="mainmenu">
+<div class="menu dest" id="mainmenu">
   <div id="dragmenu" class="draggable">        <nav>
       <ul>
         <li><a href="#">Link</a></li>
@@ -312,6 +312,25 @@ function openMenu(element) {
   }, 300);
 }
 
+    </script>
+<script type="text/javascript">
+      
+    $('.dest').draggable({ revert: 'invalid' });
+    $('#destination').droppable({
+        drop:function(ev, ui){
+            var widget = $(this);
+            if ($(ui.draggable).find(".removeButton").length == 0)
+            {
+                var removeButton = $("<span class='removeButton'>X</span>").click(function(){
+                    var parentDiv = $(this).parent();
+                    $(this).remove();
+                    parentDiv.appendTo($('#source'))
+                     $('#source div').appendTo($('#source'));
+                });
+                $('h3',ui.draggable).append(removeButton);
+            }
+        }
+    });
     </script>
   </body>
 </html>
