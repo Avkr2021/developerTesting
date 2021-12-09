@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mobile App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- icon fafa -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- icon bibi -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <!-- 15:20 -->
+  <!-- black #646464
+  green #43A164 -->
+  <style type="text/css">
+  .custom_select .select {
+   cursor: pointer;
+   display: inline-block;
+   position: relative;
+   font-size: 16px;
+   color: #43A164;
+   width: 100%;
+   height: 60px;
+}
+ .custom_select .select-styled {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: #fff;
+   padding: 20px 20px;
+}
+ .custom_select .select-styled:after {
+   content: "";
+   width: 0;
+   height: 0;
+   border: 7px solid transparent;
+   border-color: #414042 transparent transparent transparent;
+   position: absolute;
+   top: 27px;
+   right: 20px;
+}
+/* .select-styled:hover {
+   background-color: #fafafa;
+}*/
+/* .select-styled:active, .select-styled.active {
+   background-color: #f2f2f2;
+}*/
+ .custom_select .select-styled:active:after, .select-styled.active:after {
+   top: 20px;
+   border-color: transparent transparent #414042 transparent;
+}
+ .custom_select .select-options {
+   display: none;
+   position: absolute;
+   top: 100%;
+   right: 0;
+   left: 0;
+   z-index: 999999999;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   /*background-color: #f2f2f2;*/
+}
+ .custom_select .select-options li {
+   margin: 0;
+    padding: 10px 0;
+    text-indent: 20px;
+    border-bottom: 1px solid #e6e6e6;
+    background: #fff;
+}
+/* .select-options li:hover {
+   background: #d7dde4;
+}*/
+ .custom_select .select-options li[rel="hide"] {
+   display: none;
+}
+.see_break {
+  position: relative;
+}
+.see_break span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 800;
+  color: #43A164;
+}
+.see_break p {
+  text-align: center;
+  color: #43A164;
+}
+.proceed a {
+  background: #43A164;
+  color: #fff;
+  padding: 9px 34px;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.proceed a:hover {
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0px 0px 0px 2px rgba(67, 161, 100, 0.5);
+}
+.logo_aus {
+  display: flex;
+  align-items: center;
+  float: right;
+}
+.logo_aus div:last-child {
+  padding-left: 10px;
+}
+.aus_border {
+  border: 1px solid #E4E4E4;
+  border-radius: 30px;
+  padding: 10px 15px;
+  /*margin: 0px 10px;*/
+}
+.main_down_text {
+  font-size: 12px;
+  color: #E4E4E4;
+  padding: 0px 4%;
+}
+.outer_margin {
+  margin: 0px 15px;
+  box-sizing: border-box;
+}
+.main_rec_header {
+  font-size: 15px;
+  color: #646464;
+}
+.add_coupn {
+  background: #43A164;
+  color: #fff;
+  padding: 9px 15px;
+  /*text-align: center;*/
+  border-radius: 20px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.add_coupn:hover {
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0px 0px 0px 2px rgba(67, 161, 100, 0.5);
+}
+.custom_select {
+  border-bottom: 1px solid #e4e4e4;
+  margin-top: 10px;
+}
+.see_break {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 28px 0px 0px 0px;
+}
+.proceed {
+    margin-top: 5%;
+    position: fixed;
+    bottom: 5%;
+    width: 100%;
+    left: 0;
+}
+.logo_aus_empty div {
+  border-left: 1px solid #e4e4e4;
+}
+.grn_number {
+  color: #43A164;
+  font-weight: 600;
+  font-size: 18px;
+}
+.logo_aus div:first-child img {
+  width: 30px;
+}
+.send_money {
+  color: #646464;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+  </style>
+</head>
+<body>
+<div class="outer_margin">
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col">
+        <h4 class="send_money">Send Money</h4>
+      </div>
+    </div>
+  </div>
+  <div class="container mb-2">
+    <div class="row">
+      <div class="col">
+        <p class="main_rec_header">You Send</p>
+      </div>
+    </div>
+    <div class="row aus_border">
+      <div class="col-6 text-left">
+        <p class="mb-0 grn_number">1,000</p>
+      </div>
+      <div class="col-6 text-right">
+        <div class="logo_aus">
+           <div><img src="assets/img/australia.png" class="img-fluid"></div>
+          <div>AUD</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p class="mb-0 main_down_text">Include Fee 3.5 AUD</p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="main_rec_header">Recipient Receives</p>
+      </div>
+    </div>
+    <div class="row aus_border">
+      <div class="col-6 text-left">
+        <p class="mb-0 grn_number">682.90</p>
+      </div>
+      <div class="col-6 text-right">
+        <div class="logo_aus">
+          <div><img src="assets/img/australia.png" class="img-fluid"></div>
+          <div>AUD</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p class="mb-0 main_down_text">1 AUD = 0.6853 USD</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col text-right">
+        <a class="add_coupn" href="#">+Add Coupon</a>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <p class="main_rec_header">You Pay Only</p>
+      </div>
+    </div>
+    <div class="row aus_border">
+      <div class="col-6 text-left">
+        <p class="mb-0">1,000</p>
+      </div>
+      <div class="col-6 text-right">
+        <div class="logo_aus logo_aus_empty">
+          <div>AUD</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="custom_select">
+          <select hidden id="office-select">
+              <option value="hide">Source of Funds</option>  
+              <option value="office_0">Source of Funds</option>  
+              <option value="office_1">Source of Funds</option>
+              <option value="office_2">Source of Funds</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="see_break">
+          <span>+</span>
+          <p class="mb-0">See Breakdowns</p>
+        </div>
+        <div class="proceed text-center">
+          <a href="#">Proceed</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>
